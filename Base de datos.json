@@ -1,0 +1,12 @@
+[
+    {"id":1,"name": "Chocolate","description": "chocolate negro","price": 4000, "status":true, "stock":50, "category": "chocolate"},
+    {"id":2,"name": "Alfajor","description": "alfajor triple","price": 2500, "status":true, "stock":50, "category": "alfajor"},
+    {"id":3,"name": "Caramelo","description": "caramelo duro","price": 500, "status":true, "stock":50, "category": "caramelo"},
+    {"id":4,"name": "Chicle","description": "chicle de menta","price": 300, "status":true, "stock":50, "category": "chicle"},
+    {"id":5,"name": "Chocolinas","description": "galleta de chocolate","price": 1500, "status":true, "stock":50, "category": "galleta"},
+    {"id":6,"name": "Helado","description": "helado de vainilla","price": 3500, "status":true, "stock":50, "category": "helado"},
+    {"id":7,"name": "Bon o bon","description": "bombón relleno","price": 2000, "status":true, "stock":50, "category": "bombón"},
+    {"id":8,"name": "Pastilla","description": "pastillas multifruta","price": 2500, "status":true, "stock":50, "category": "mermelada"},
+    {"id":9,"name": "Gomitas","description": "gomitas frutales","price": 600, "status":true, "stock":50, "category": "jalea"},
+    {"id":10,"name": "Confite","description": "confites variados","price": 1200, "status":true, "stock":50, "category": "confite"}
+]
