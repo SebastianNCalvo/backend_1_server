@@ -21,9 +21,10 @@ app.get('/products/:id', (req, res) => {
     const productById = baseDeDatos.find(p => p.id === id);
     if(!productById) {
         return res.status(404).json({error: "Producto no encontrado"})
-    } 
+    }
     res.status(200).json(productById)
 });
+
 
 app.post('/products', (req, res) => {
     const {name, description, price, status, stock, category} = req.body;
@@ -37,24 +38,27 @@ app.post('/products', (req, res) => {
         category
     }
     baseDeDatos.push(nuevoProducto)
+    fs.writeFileSync('Base de datos.json', JSON.stringify(baseDeDatos))
     res.status(201).json({message: "Producto creado con exito ", producto: nuevoProducto})
 });
 
 app.put('/products/:id', (req, res) => {
-        const id = parseInt(req.params.id);
-        const {name, description, price, status, stock, category} = req.body;
-        const productById = baseDeDatos.find(p => p.id === id);
-        if(!productById) {
-            return res.status(404).json({error: "Producto no encontrado"})
-        }
+    const id = parseInt(req.params.id);
+    const {name, description, price, status, stock, category} = req.body;
+    const productById = baseDeDatos.find(p => p.id === id);
 
-        productById.name = name ?? productById.name;
-        productById.description = description ?? productById.description;
-        productById.price = price ?? productById.price;
-        productById.status = status ?? productById.status;
-        productById.stock = stock ?? productById.stock;
-        productById.category = category ?? productById.category;
+    if(!productById) {
+        return res.status(404).json({error: "Producto no encontrado"})
+    }
 
+    productById.name = name ?? productById.name;
+    productById.description = description ?? productById.description;
+    productById.price = price ?? productById.price;
+    productById.status = status ?? productById.status;
+    productById.stock = stock ?? productById.stock;
+    productById.category = category ?? productById.category;
+
+    fs.writeFileSync('Base de datos.json', JSON.stringify(baseDeDatos))
     res.status(200).json({message: "Producto actualizado con exito", producto: productById})
     }
 )
@@ -66,6 +70,7 @@ app.delete('/products/:id', (req, res) => {
         return res.status(404).json({error: "Producto no encontrado"})
     }
     baseDeDatos = baseDeDatos.filter(p => p.id !== id);
+    fs.writeFileSync('Base de datos.json', JSON.stringify(baseDeDatos))
     res.status(204).send();
 })
 
