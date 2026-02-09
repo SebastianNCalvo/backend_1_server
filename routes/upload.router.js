@@ -1,0 +1,38 @@
+import { Router } from "express";
+import multer from "multer";
+import path from 'path';
+import { title } from "process";
+import { fileURLToPath } from 'url';
+
+const router = Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, '../uploads'),
+    filename: (req, file, callback) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random());
+        callback(null, uniqueSuffix + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({storage});
+
+
+router.get('/', (req, res) =>{
+    res.render('upload', {title: 'Subir Archivo'})
+})
+
+router.post('/', upload.single('miArchivo'), (req, res) =>{
+    const file = req.file;
+
+    res.render('upload', {
+        title: 'Subir Archivo',
+        msg:`El archivo ${req.file.originalname} fue subido con exito`,
+        fileUrl: `/uploads/${file.filename}`,
+        isImage: file.mimetype.startsWith('image/')
+    })
+})
+
+
+export default router;
