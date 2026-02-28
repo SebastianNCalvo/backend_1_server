@@ -3,7 +3,7 @@
   "version": "2.5.0",
   "description": "Primer servidor construido con express",
   "type": "module",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",

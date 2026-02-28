@@ -5,4 +5,8 @@ router.get('/', (req, res) =>{
     res.render('home', {title: 'Inicio'})
 })
 
+router.get('/chat', (req, res) =>{
+    res.render('chat', {title: 'Chat'})
+})
+
 export default router;
