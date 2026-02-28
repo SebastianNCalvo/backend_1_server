@@ -1,6 +1,6 @@
 {
   "name": "backend_1_server",
-  "version": "1.0.0",
+  "version": "2.5.0",
   "description": "Primer servidor construido con express",
   "type": "module",
   "main": "server.js",
@@ -27,7 +27,9 @@
     "express": "^5.2.1",
     "bootstrap": "5.3.8",
     "express-handlebars": "8.0.4",
-    "multer": "2.0.2"
+    "multer": "2.0.2",
+    "socket.io": "4.8.3",
+    "sweetalert2": "11.26.21"
   },
   "devDependencies": {
     "nodemon": "3.1.11"

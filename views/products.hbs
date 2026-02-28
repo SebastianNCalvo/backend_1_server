@@ -1,0 +1,17 @@
+{{!< main}}
+<section class="container">
+    <h2>Productos</h2>
+    
+    <div class="productos-grid">
+        {{#each products}}
+            <article class="producto-card">
+                <h3>Nombre: {{this.name}}</h3>
+                <p>Descripción: {{this.description}}</p>
+                <p>Categoría: {{this.category}}</p>
+                <p>Precio: ${{this.price}}</p>
+            </article>
+        {{else}}
+            <p>No hay productos cargados en la base de datos.</p>
+        {{/each}}
+    </div>
+</section>

@@ -4,6 +4,7 @@ import path, { extname } from 'path';
 import { fileURLToPath } from 'url';
 import homeRouter from './routes/home.router.js'
 import uploadRouter from './routes/upload.router.js'
+import products from './routes/products.router.js';
 import { title } from 'process';
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', homeRouter);
 app.use('/upload', uploadRouter)
+app.use('/products', products)
 
 app.use((req, res) =>{
     res.status(404).render('404', {title: '404 - pagina no encontrada'})
