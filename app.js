@@ -1,17 +1,24 @@
 import express from 'express';
+import { connectMongoDB } from './config/db/connect.config.js';
 
-import homeRouter from './routes/home.router.js'
+import homeRouter from './routes/home.router.js';
 import products from './routes/products.router.js';
 
 const app = express();
 const PORT = 3000;
+app.use(express.json());
 
 app.use('/', homeRouter);
-app.use('/products', products)
+app.use('/products', products);
 
 
 app.use((req, res) =>{
-    res.status(404).render('404', {title: '404 - pagina no encontrada'})
+    res.status(404).json({title: '404 - pagina no encontrada'})
 })
 
-app.listen(PORT, () => console.log(`Servidor funcionando con express en http://localhost:${PORT}`))
+const startServer = async () => {
+    await connectMongoDB();
+    app.listen(PORT, () => console.log(`✅ Servidor funcionando con express en http://localhost:${PORT}`));
+}
+
+startServer();
