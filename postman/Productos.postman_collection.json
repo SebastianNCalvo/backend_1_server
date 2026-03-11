@@ -31,7 +31,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/products/1",
+          "raw": "http://localhost:3000/products/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -39,7 +39,7 @@
           "port": "3000",
           "path": [
             "products",
-            "1"
+            "5"
           ]
         }
       },
@@ -52,7 +52,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"Dulce de Leche\",\r\n    \"description\": \"confites variados\",\r\n    \"price\": 1200, \r\n    \"status\":true, \r\n    \"stock\":50, \r\n    \"category\": \"Untable\"\r\n}",
+          "raw": "{\r\n    \"name\": \"Alfajor Aguila\",\r\n    \"description\": \"Alfajor\",\r\n    \"price\": 12, \r\n    \"status\":true, \r\n    \"stock\":50, \r\n    \"category\": \"alfajores\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -60,14 +60,14 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/products",
+          "raw": "http://localhost:3000/",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
-            "products"
+            ""
           ]
         }
       },
@@ -80,7 +80,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"Dulce de Leche\",\r\n    \"description\": \"confites variados\",\r\n    \"price\": 1200, \r\n    \"status\":true, \r\n    \"stock\":50, \r\n    \"category\": \"Untable\"\r\n}",
+          "raw": "{\r\n    \"name\": \"Dulce de Leche\",\r\n    \"description\": \"confites variados\",\r\n    \"price\": 1200, \r\n    \"status\":true, \r\n    \"stock\":40, \r\n    \"category\": \"Untable\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -88,7 +88,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/products/2",
+          "raw": "http://localhost:3000/products/11",
           "protocol": "http",
           "host": [
             "localhost"
@@ -96,7 +96,7 @@
           "port": "3000",
           "path": [
             "products",
-            "2"
+            "11"
           ]
         }
       },
@@ -108,7 +108,7 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/products/2",
+          "raw": "http://localhost:3000/products/11",
           "protocol": "http",
           "host": [
             "localhost"
@@ -116,7 +116,7 @@
           "port": "3000",
           "path": [
             "products",
-            "2"
+            "11"
           ]
         }
       },

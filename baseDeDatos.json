@@ -1,92 +1,92 @@
 [
   {
     "id": 1,
-    "name": "Chocolate",
-    "description": "chocolate negro",
-    "price": 4000,
+    "name": "Alfajor de Chocolate",
+    "description": "Relleno de dulce de leche, bañado en chocolate negro",
+    "price": 2500,
     "status": true,
-    "stock": 50,
-    "category": "chocolate"
+    "stock": 40,
+    "category": "alfajores"
   },
   {
     "id": 2,
-    "name": "Alfajor",
-    "description": "alfajor triple",
-    "price": 2500,
+    "name": "Barra de Chocolate Blanco",
+    "description": "Tableta de chocolate blanco premium",
+    "price": 3800,
     "status": true,
-    "stock": 50,
-    "category": "alfajor"
+    "stock": 25,
+    "category": "chocolates"
   },
   {
     "id": 3,
-    "name": "Caramelo",
-    "description": "caramelo duro",
-    "price": 500,
+    "name": "Alfajor de Maicena",
+    "description": "Tradicional con coco rallado",
+    "price": 2200,
     "status": true,
     "stock": 50,
-    "category": "caramelo"
+    "category": "alfajores"
   },
   {
     "id": 4,
-    "name": "Chicle",
-    "description": "chicle de menta",
-    "price": 300,
+    "name": "Bombones de Avellana",
+    "description": "Caja de bombones rellenos",
+    "price": 5500,
     "status": true,
-    "stock": 50,
-    "category": "chicle"
+    "stock": 15,
+    "category": "chocolates"
   },
   {
     "id": 5,
-    "name": "Chocolinas",
-    "description": "galleta de chocolate",
-    "price": 1500,
+    "name": "Alfajor Glaseado",
+    "description": "Relleno de dulce de leche con baño de azúcar",
+    "price": 2000,
     "status": true,
-    "stock": 50,
-    "category": "galleta"
+    "stock": 60,
+    "category": "alfajores"
   },
   {
     "id": 6,
-    "name": "Helado",
-    "description": "helado de vainilla",
-    "price": 3500,
+    "name": "Chocolate Amargo 70%",
+    "description": "Tableta de cacao intenso",
+    "price": 4200,
     "status": true,
-    "stock": 50,
-    "category": "helado"
+    "stock": 30,
+    "category": "chocolates"
   },
   {
     "id": 7,
-    "name": "Bon o bon",
-    "description": "bombón relleno",
-    "price": 2000,
+    "name": "Alfajor Triple",
+    "description": "Tres capas de galleta y doble dulce de leche",
+    "price": 3200,
     "status": true,
-    "stock": 50,
-    "category": "bombón"
+    "stock": 20,
+    "category": "alfajores"
   },
   {
     "id": 8,
-    "name": "Pastilla",
-    "description": "pastillas multifruta",
-    "price": 2500,
+    "name": "Ramas de Chocolate",
+    "description": "Chocolate con leche en forma de ramas",
+    "price": 3000,
     "status": true,
-    "stock": 50,
-    "category": "mermelada"
+    "stock": 45,
+    "category": "chocolates"
   },
   {
     "id": 9,
-    "name": "Gomitas",
-    "description": "gomitas frutales",
-    "price": 600,
+    "name": "Alfajor de Fruta",
+    "description": "Relleno de dulce de membrillo",
+    "price": 1800,
     "status": true,
-    "stock": 50,
-    "category": "jalea"
+    "stock": 35,
+    "category": "alfajores"
   },
   {
     "id": 10,
-    "name": "Confite",
-    "description": "confites variados",
-    "price": 1200,
+    "name": "Trufas de Chocolate",
+    "description": "Esferas de chocolate artesanal",
+    "price": 4800,
     "status": true,
-    "stock": 50,
-    "category": "confite"
+    "stock": 12,
+    "category": "chocolates"
   }
 ]
