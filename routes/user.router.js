@@ -39,10 +39,10 @@ router.post('/', async (req, res) => {
             return res.status(400).json({error: 'Todos los campos son requeridos'});
         }
         const newUser = new User ({name, email, age});
-        newUser.save();
+        await newUser.save();
         res.status(201).json({message: 'Usuario creado exitosamente', newUser})
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 
