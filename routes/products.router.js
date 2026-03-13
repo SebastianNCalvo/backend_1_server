@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         const products = await Products.find();
         res.status(200).json({products: products});
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 

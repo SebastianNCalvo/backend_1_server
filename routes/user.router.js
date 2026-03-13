@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         const users = await User.find();
         res.status(200).json({users: users});
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 
@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
         }
         res.status(200).json({user});
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 
@@ -62,7 +62,7 @@ router.put('/:id', async (req, res) => {
         }
         res.status(200).json({messege: 'Ususario actualizado correctamente', user});
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 
@@ -79,7 +79,7 @@ router.delete('/:id', async (req, res) => {
         }
         res.status(204).end();
     } catch (err) {
-        return router.status(500).json({error: 'Error interno del servidor', message: err.message})
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
 })
 export default router;
