@@ -2,7 +2,7 @@ import { Router } from "express";
 import { Products } from "../config/models/product.model.js";
 import mongoose from "mongoose";
 
-const router = Router()
+const router = Router();
 
 // Get all products
 router.get('/', async (req, res) => {
