@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/discountone/:id', async (req, res) => {
     try {
         const Id  = req.params.id;
         if(!mongoose.Types.ObjectId.isValid(Id)) {
@@ -53,6 +53,27 @@ router.put('/:id', async (req, res) => {
             const newproductInCart = await Cart.findByIdAndDelete(Id)
         }
         res.status(204).end();
+    } catch (err) {
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    try {
+        const Id  = req.params.id;
+        if(!mongoose.Types.ObjectId.isValid(Id)) {
+            return res.status(400).json({error: 'El formato del id no es valido'})
+        };
+        const { quantity } = req.body
+        if (quantity < 0 || !Number.isInteger(quantity)) {
+            return res.status(404).json({error: 'El parametro no es valido. La cantidad ingresada debe ser un número entero mayor que cero'})
+        } else {
+            const productInCart = await Cart.findByIdAndUpdate(Id, { quantity }, { new: true });
+            if(!productInCart) {
+                return res.status(404).json({error: 'El producto no existe'})
+            }
+            res.status(200).json({messege: 'Producto actualizado correctamente', productInCart});
+        }
     } catch (err) {
         return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }

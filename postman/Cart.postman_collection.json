@@ -29,7 +29,7 @@
       "response": []
     },
     {
-      "name": "Post new product on cart",
+      "name": "Post new product on cart by ID in products",
       "request": {
         "auth": {
           "type": "noauth"
@@ -38,7 +38,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"id\":\"69b5e810c8da5b54a888b020\"\r\n}",
+          "raw": "{\r\n    \"id\":\"69b1fec994fbe086f6eda56d\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -54,6 +54,89 @@
           "port": "3000",
           "path": [
             "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete product in cart by ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\":\"69b1fec994fbe086f6eda56d\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/cart/69b8223784036dfb52270f4d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "cart",
+            "69b8223784036dfb52270f4d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Put product in cart (quantity -1)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/cart/discountone/69b8223784036dfb52270f4d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "cart",
+            "discountone",
+            "69b8223784036dfb52270f4d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Put product (edit quantity)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"quantity\": 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/cart/69b8223784036dfb52270f4d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "cart",
+            "69b8223784036dfb52270f4d"
           ]
         }
       },
