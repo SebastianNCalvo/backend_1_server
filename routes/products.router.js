@@ -38,9 +38,14 @@ router.post('/', async (req, res) => {
         if(!name || !price || !category || !stock){
             return res.status(400).json({error: 'Todos los campos son requeridos'});
         }
-        const newProducts = new Products ({name, price, category, stock});
-        await newProducts.save();
-        res.status(201).json({message: 'Producto creado exitosamente', newProducts})
+        const productLoader = await Products.findOne({name: name})
+        if(productLoader){
+            return res.status(400).json({message: 'El producto ya se encuentra cargado'})
+        } else {
+            const newProducts = new Products ({name, price, category, stock});
+            await newProducts.save();
+            res.status(201).json({message: 'Producto creado exitosamente', newProducts})
+        }
     } catch (err) {
         return res.status(500).json({error: 'Error interno del servidor', message: err.message})
     }
