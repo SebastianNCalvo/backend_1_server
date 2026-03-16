@@ -20,12 +20,14 @@ router.post('/', async (req, res) => {
         if(!mongoose.Types.ObjectId.isValid(Id)){
             return res.status(400).json({error: 'El formato del id no es valido'})
         }
-        const {name, price, category} = await Products.findById(Id);
-        const isInCart = await Cart.findOne({name: name});
-        if (isInCart) {
-            isInCart.quantity +=1
-            res.status(200).json({message: 'Se sumó 1 más'})
-        } else {
+        const newProduct = await Products.findById(Id);
+        const productInCart = await Cart.findOne({name: newProduct.name});
+        if (productInCart) {
+            const newproductInCart = await Cart.findByIdAndUpdate(productInCart.id, {$inc: {quantity:1}}, {new: true})
+            res.status(200).json({message: newproductInCart})
+        }
+        else {
+            const {name, price, category} = newProduct
             const newCart = new Cart ({name, price, category});
             await newCart.save()
             res.status(200).json({newCart: newCart})
@@ -35,12 +37,41 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.delete('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
-
+        const Id  = req.params.id;
+        if(!mongoose.Types.ObjectId.isValid(Id)) {
+            return res.status(400).json({error: 'El formato del id no es valido'})
+        };
+        const productInCart = await Cart.findById(Id);
+        if(!productInCart) {
+            return res.status(404).json({error: 'El producto no existe'})
+        }
+        if(productInCart.quantity > 1) {
+            const newproductInCart = await Cart.findByIdAndUpdate(Id, {$inc: {quantity:-1}}, {new: true})
+        } else {
+            const newproductInCart = await Cart.findByIdAndDelete(Id)
+        }
+        res.status(204).end();
     } catch (err) {
         return res.status(500).json({error: 'Error interno del servidor', message: err.message})
-    } 
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const Id  = req.params.id;
+        if(!mongoose.Types.ObjectId.isValid(Id)) {
+            return res.status(400).json({error: 'El formato del id no es valido'})
+        };
+        const productInCart = await Cart.findByIdAndDelete(Id);
+        if(!productInCart) {
+            return res.status(404).json({error: 'El producto no existe'})
+        }
+        res.status(204).end();
+    } catch (err) {
+        return res.status(500).json({error: 'Error interno del servidor', message: err.message})
+    }
 })
 
 export default router;
