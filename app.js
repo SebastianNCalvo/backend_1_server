@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use('/', homeRouter);
 app.use('/user', userRouter);
-app.use('/cursos', cursoRouter);
+app.use('/curso', cursoRouter);
 app.use('/products', products);
 app.use('/cart', cartRouter);
 

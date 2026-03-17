@@ -1,0 +1,63 @@
+{
+  "info": {
+    "_postman_id": "c1ecce95-fe8f-4908-9833-fcf0ad9d3533",
+    "name": "Courses",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51966098"
+  },
+  "item": [
+    {
+      "name": "Get all cursos",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/curso",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create course",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend 1 CoderHouse\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/curso",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
