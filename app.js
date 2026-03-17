@@ -2,8 +2,9 @@ import express from 'express';
 import { connectMongoDB } from './config/db/connect.config.js';
 
 import homeRouter from './routes/home.router.js';
-import products from './routes/products.router.js';
 import userRouter from './routes/user.router.js';
+import cursoRouter from './routes/courses.router.js';
+import products from './routes/products.router.js';
 import cartRouter from './routes/cart.router.js';
 
 const app = express();
@@ -11,8 +12,9 @@ const PORT = 3000;
 app.use(express.json());
 
 app.use('/', homeRouter);
-app.use('/products', products);
 app.use('/user', userRouter);
+app.use('/cursos', cursoRouter);
+app.use('/products', products);
 app.use('/cart', cartRouter);
 
 
@@ -21,7 +23,7 @@ app.use((req, res) =>{
 })
 
 const startServer = async () => {
-    await connectMongoDB();
+    await connectMongoDB('atlas');
     app.listen(PORT, () => console.log(`✅ Servidor funcionando con express en http://localhost:${PORT}`));
 }
 
