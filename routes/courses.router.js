@@ -52,4 +52,37 @@ router.post('/:courseId/inscription/:studentId', async (req, res) => {
     }
 })
 
+router.delete('/:courseId/inscription/:studentId', async (req, res) => {
+    try {
+        const curso = await Curso.findById(req.params.courseId);
+
+        if(!curso) {
+            return res.status(404).json({error: 'Curso no encontrado'})
+        };
+
+        curso.students = curso.students.filter(
+            (id) => id.toString() !== req.params.studentId
+        )
+        await curso.save();
+
+        res.status(200).json({message: `El alumno fue eliminado del curso ${curso.title} correctamente`})
+    } catch (err) {
+        res.status(500).json({error: 'Error interno del servidor', message: err.message});
+    }
+})
+
+router.delete('/:courseId', async (req, res) => {
+    try{
+        const curso = await Curso.findByIdAndDelete(req.params.courseId);
+
+        if(!curso) {
+            return res.status(404).json({error: 'Curso no encontrado'})
+        }
+
+        res.status(204).end();
+    } catch (err) {
+        res.status(500).json({error: 'Error interno del servidor', message: err.message});
+    }
+})
+
 export default router;

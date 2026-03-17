@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "ce240687-6c04-40a3-9d77-c8abb6a255c7",
+    "name": "cursos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51966098"
+  },
+  "item": [
+    {
+      "name": "Get All cursos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/curso",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create new course",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Backend 2\",\r\n    \"description\": \"Curso de Backend - Nivel 2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/curso",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Inscription new student at course",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend - Nivel 1\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/curso/69b9c332ddfb5d2a83833dfd/inscription/69b9bb2a01397338b8b7c1a9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso",
+            "69b9c332ddfb5d2a83833dfd",
+            "inscription",
+            "69b9bb2a01397338b8b7c1a9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete student at course",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend - Nivel 1\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/curso/69b9c332ddfb5d2a83833dfd/inscription/69b9bb2a01397338b8b7c1a9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "curso",
+            "69b9c332ddfb5d2a83833dfd",
+            "inscription",
+            "69b9bb2a01397338b8b7c1a9"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
