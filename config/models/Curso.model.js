@@ -9,7 +9,7 @@ const cursoSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    students: [{type: mongoose.Schema.Types.ObjectId, ref: 'user'}]
+    students: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 
 export const Curso = mongoose.model('Curso', cursoSchema);

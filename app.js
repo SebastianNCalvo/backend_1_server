@@ -2,8 +2,11 @@ import express from 'express';
 import { connectMongoDB } from './config/db/connect.config.js';
 
 import homeRouter from './routes/home.router.js';
+
 import userRouter from './routes/user.router.js';
 import cursoRouter from './routes/courses.router.js';
+import populateRouter from './routes/pupulate.router.js';
+
 import products from './routes/products.router.js';
 import cartRouter from './routes/cart.router.js';
 
@@ -12,10 +15,13 @@ const PORT = 3000;
 app.use(express.json());
 
 app.use('/', homeRouter);
-app.use('/user', userRouter);
-app.use('/curso', cursoRouter);
-app.use('/products', products);
-app.use('/cart', cartRouter);
+
+app.use('/api/user', userRouter);
+app.use('/api/curso', cursoRouter);
+app.use('/api/populate', populateRouter);
+
+app.use('/api/products', products);
+app.use('/api/cart', cartRouter);
 
 
 app.use((req, res) =>{
