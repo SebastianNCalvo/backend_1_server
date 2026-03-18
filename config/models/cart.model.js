@@ -24,7 +24,6 @@ const cartSchema = new mongoose.Schema({
 
 })
 
-
 cartSchema.pre('save', function(){
     console.log(`El producto ${this.name} se agregó al carrito exitosamente`);
 })

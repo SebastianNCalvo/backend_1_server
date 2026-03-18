@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { Curso } from "../config/models/Curso.model.js";
 import { Cart } from "../config/models/cart.model.js";
+import { Products } from "../config/models/product.model.js";
 
 const router = Router();
 
@@ -10,9 +11,8 @@ router.get('/demo', async (req, res) => {
 })
 
 router.get('/democart', async (req, res) => {
-    const cart = await Cart.find().populate('idProduct', 'name');
-    res.status(200).json(cart)
+    const Products = await Cart.find().populate('idProduct', 'name');
+    res.status(200).json(Products)
 })
-
 
 export default router;
