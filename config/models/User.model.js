@@ -16,4 +16,12 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+userSchema.pre('save', function(){
+    console.log(`Guardado como usuario ${this.name}`);
+})
+
+userSchema.post('find', function(result){
+    console.log(`Se consultaron por ${result.length} usuarios`)
+})
+
 export const User = mongoose.model('User', userSchema);

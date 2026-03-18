@@ -5,9 +5,14 @@ import mongoose from "mongoose";
 const router = Router();
 
 // Get all products
-router.get('/', async (req, res) => {
+router.get('/all/:sort', async (req, res) => {
     try {
-        const products = await Products.find();
+        const { sort } = req.params;
+        const sortOrder ={};
+        if(sort) {
+            sortOrder.name = (sort === 'asc') ? 1 : -1
+        }
+        const products = await Products.find().sort(sortOrder);
         res.status(200).json({products: products});
     } catch (err) {
         return res.status(500).json({error: 'Error interno del servidor', message: err.message})
