@@ -34,4 +34,5 @@ const startServer = async () => {
     app.listen(PORT, () => console.log(`✅ Servidor funcionando con express en http://localhost:${PORT}`));
 }
 
+
 startServer();

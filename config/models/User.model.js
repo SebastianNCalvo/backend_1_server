@@ -24,4 +24,5 @@ userSchema.post('find', function(result){
     console.log(`Se consultaron por ${result.length} usuarios`)
 })
 
+
 export const User = mongoose.model('User', userSchema);
