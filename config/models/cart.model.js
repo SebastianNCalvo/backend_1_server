@@ -11,16 +11,19 @@ const cartSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    category: {
-        type: String,
-        required: true
-    },
     quantity: {
         type: Number,
         required: true,
         default: 1
-    }
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    idProduct: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
+
 })
+
 
 cartSchema.pre('save', function(){
     console.log(`El producto ${this.name} se agregó al carrito exitosamente`);

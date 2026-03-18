@@ -12,13 +12,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/curso",
+          "raw": "http://localhost:3000/api/curso",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
+            "api",
             "curso"
           ]
         }
@@ -40,13 +41,14 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/curso",
+          "raw": "http://localhost:3000/api/curso",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
+            "api",
             "curso"
           ]
         }
@@ -63,17 +65,18 @@
           "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend - Nivel 1\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/curso/69b9c332ddfb5d2a83833dfd/inscription/69b9bb2a01397338b8b7c1a9",
+          "raw": "http://localhost:3000/api/curso/69bac54ae23335c2a5e46121/inscription/69b1aceec012b75eac07fc4e",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
+            "api",
             "curso",
-            "69b9c332ddfb5d2a83833dfd",
+            "69bac54ae23335c2a5e46121",
             "inscription",
-            "69b9bb2a01397338b8b7c1a9"
+            "69b1aceec012b75eac07fc4e"
           ]
         }
       },
@@ -92,17 +95,89 @@
           "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend - Nivel 1\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/curso/69b9c332ddfb5d2a83833dfd/inscription/69b9bb2a01397338b8b7c1a9",
+          "raw": "http://localhost:3000/api/curso/69b9c332ddfb5d2a83833dfd/inscription/69b9bb2a01397338b8b7c1a9",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
+            "api",
             "curso",
             "69b9c332ddfb5d2a83833dfd",
             "inscription",
             "69b9bb2a01397338b8b7c1a9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete course by ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Backend 1\",\r\n    \"description\": \"Curso de Backend - Nivel 1\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/curso/69b9c59d084b3608b1aa3b83",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "curso",
+            "69b9c59d084b3608b1aa3b83"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pupolate demo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/populate/demo",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "populate",
+            "demo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aggregations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/aggregations/cursos/resumen",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "aggregations",
+            "cursos",
+            "resumen"
           ]
         }
       },

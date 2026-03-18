@@ -25,13 +25,12 @@ app.use('/api/aggregations', aggregationsRouter);
 app.use('/api/products', products);
 app.use('/api/cart', cartRouter);
 
-
 app.use((req, res) =>{
     res.status(404).json({title: '404 - pagina no encontrada'})
 })
 
 const startServer = async () => {
-    await connectMongoDB('atlas');
+    await connectMongoDB('local');
     app.listen(PORT, () => console.log(`✅ Servidor funcionando con express en http://localhost:${PORT}`));
 }
 

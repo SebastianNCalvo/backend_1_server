@@ -32,6 +32,6 @@ export const aggregateCourses = async (req, res) => {
         res.status(200).json({ message: "Resumen generado y guardado en 'orders'" });
     } catch (error) {
         console.error("Error, se producjo un error en aggregateCourses. ", error);
-        res.status(500),json({ error: "Error, se producjo un error en aggregateCourses."})
+        res.status(500).json({ error: "Error, se producjo un error en aggregateCourses."})
     }
 }
